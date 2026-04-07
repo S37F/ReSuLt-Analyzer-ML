@@ -181,7 +181,9 @@ streamlit run app.py --server.port 8501
 ```
 
 ### Streamlit Community Cloud
-Deploy from GitHub at [share.streamlit.io](https://share.streamlit.io): select this repo, branch `main`, entry file `app.py`. Dependencies are installed from `requirements.txt` (no `psycopg2-binary` there, so the build avoids native PostgreSQL tooling; the hosted app uses JSON file storage unless you add secrets and optional drivers). In app settings, set **Python 3.11** (or **3.12**) if the default version causes install issues.
+Deploy from GitHub at [share.streamlit.io](https://share.streamlit.io): select this repo, branch `main`, entry file `app.py`.
+
+**Dependencies:** Community Cloud [prioritizes `uv.lock` over `requirements.txt`](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/app-dependencies) if both exist. This repo keeps **`requirements.txt`** as the source of truth for Cloud and does **not** commit `uv.lock`, so installs skip optional native drivers like `psycopg2-binary`. The hosted app uses JSON file storage unless you configure external DBs. In app settings, set **Python 3.11** or **3.12** if the default version causes install issues.
 
 ### Production Deployment
 1. **Heroku**: Use provided `Procfile` and requirements
