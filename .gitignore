@@ -67,7 +67,7 @@ student-analytics-platform.zip
 .python-version
 
 # uv lock: Streamlit Community Cloud prefers uv.lock over requirements.txt and would
-# ignore requirements.txt. Keep lock local only: run `uv lock` after changing pyproject.toml`.
+# ignore requirements.txt. Keep lock local only: run `uv lock` after changing pyproject.toml.
 uv.lock
 
 # Backup files
