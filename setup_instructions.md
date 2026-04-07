@@ -77,8 +77,16 @@ Run these commands to ensure everything works:
 
 ```bash
 # Install dependencies (if needed)
-pip install streamlit pandas numpy plotly scikit-learn statsmodels pdfplumber reportlab psycopg2-binary pymongo sqlalchemy
+pip install -r requirements.txt
+```
 
+Optional database drivers (PostgreSQL / MongoDB only):
+
+```bash
+pip install "psycopg2-binary>=2.9.10" "pymongo>=4.13.2"
+```
+
+```bash
 # Run the application
 streamlit run app.py
 

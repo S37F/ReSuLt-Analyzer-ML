@@ -66,8 +66,13 @@ cd ReSuLt-Analyzer-ML
 
 ### 2. Install Dependencies
 ```bash
-pip install streamlit pandas numpy plotly scikit-learn statsmodels pdfplumber reportlab psycopg2-binary pymongo sqlalchemy
+pip install -r requirements.txt
 ```
+Optional PostgreSQL / MongoDB drivers (only if you use those backends):
+```bash
+pip install "psycopg2-binary>=2.9.10" "pymongo>=4.13.2"
+```
+Or install optional drivers only: `pip install "psycopg2-binary>=2.9.10" "pymongo>=4.13.2"`.
 
 ### 3. Run the Application
 ```bash
@@ -174,6 +179,9 @@ student-analytics-platform/
 ```bash
 streamlit run app.py --server.port 8501
 ```
+
+### Streamlit Community Cloud
+Deploy from GitHub at [share.streamlit.io](https://share.streamlit.io): select this repo, branch `main`, entry file `app.py`. Dependencies are installed from `requirements.txt` (no `psycopg2-binary` there, so the build avoids native PostgreSQL tooling; the hosted app uses JSON file storage unless you add secrets and optional drivers). In app settings, set **Python 3.11** (or **3.12**) if the default version causes install issues.
 
 ### Production Deployment
 1. **Heroku**: Use provided `Procfile` and requirements

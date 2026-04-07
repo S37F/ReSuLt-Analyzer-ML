@@ -1,0 +1,11 @@
+# Core runtime (Streamlit Community Cloud, local JSON storage).
+# For PostgreSQL/MongoDB, see pyproject.toml optional extras or install drivers separately.
+numpy>=2.3.1
+pandas>=2.3.1
+pdfplumber>=0.11.7
+plotly>=6.2.0
+reportlab>=4.4.3
+scikit-learn>=1.7.1
+sqlalchemy>=2.0.41
+statsmodels>=0.14.4
+streamlit>=1.47.0
