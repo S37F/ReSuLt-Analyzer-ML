@@ -1,7 +1,7 @@
 [server]
 headless = true
 address = "0.0.0.0"
-port = 5000
+# Port defaults to 8501 (required for typical /healthz probes; do not set to 5000 unless the host matches it).
 
 [theme]
 base = "light"
